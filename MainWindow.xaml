@@ -1,0 +1,131 @@
+﻿<Window x:Class="OpenQueu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenQueu"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Height="350" Width="900">
+
+    <Border CornerRadius="10"
+            BorderThickness="1">
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#f9fafc " Offset="0.5"/>
+                <GradientStop Color="#ebeef3" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="10,10,10,10"
+                Grid.Column="0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                        <GradientStop Color="#f9fafc" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="controlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,5,5,0"
+                                MouseLeftButtonDown="controlBar_MouseLeftButtonDown">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="ButtonExit" Background="#FFFF0069" Width="20" Height="20"  BorderBrush="{x:Null}" Margin="5,0,5,0" Click="ButtonExit_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="50"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="ButtonMin" Background="#00ffd1" Width="20" Height="20"  BorderBrush="{x:Null}" Click="ButtonMin_Click">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="50"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel x:Name="section_ports"
+                                Grid.Row="1"
+                                Orientation="Horizontal"
+                                FlowDirection="LeftToRight"
+                                Background="Transparent"
+                                Margin="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="293"/>
+                                <ColumnDefinition Width="293"/>
+                                <ColumnDefinition Width="293"/>
+                            </Grid.ColumnDefinitions>
+                            <Border CornerRadius="10"
+                                    BorderThickness="1"
+                                    Grid.Column="0"
+                                    Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Opacity="0.1" Direction="-50"/>
+                                </Border.Effect>
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="#e1e8ef"/>
+                                </Border.BorderBrush>
+                                <StackPanel Background="#ffff">
+                                    <Image Source="/ico_MySQL.png" Width="150"/>
+                                    <Button x:Name="Buton_port_MySQL" Style="{StaticResource btn_prin}" Content="Start" Margin="0,10,0,0" Click="Buton_port_MySQL_Click"/>
+                                    <Button x:Name="Btn_reset_MySQL" Style="{StaticResource btn_reset}" Content="Reset" Width="100" Margin="0,10,0,0" Click="Btn_reset_MySQL_Click"/>
+                                </StackPanel>
+                            </Border>
+                            <Border CornerRadius="10"
+                                    BorderThickness="1"
+                                    Grid.Column="1"
+                                    Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Opacity="0.1" Direction="-50"/>
+                                </Border.Effect>
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="#e1e8ef"/>
+                                </Border.BorderBrush>
+                                <StackPanel Background="#ffff">
+                                    <Image Source="/icon_filezilla.png" Width="150"/>
+                                    <Button x:Name="Btn_filezilla" Style="{StaticResource btn_prin}" Content="Start" Margin="0,10,0,0" Click="Btn_filezilla_Click"/>
+                                    <Button x:Name="Btn_reset_filezilla"  Style="{StaticResource btn_reset}" Content="Reset" Width="100" Margin="0,10,0,0" Click="Btn_reset_filezilla_Click" />
+                                </StackPanel>
+                            </Border>
+                            <Border CornerRadius="10"
+                                    BorderThickness="1"
+                                    Grid.Column="2"
+                                    Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Opacity="0.1" Direction="-50"/>
+                                </Border.Effect>
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="#e1e8ef"/>
+                                </Border.BorderBrush>
+                                <StackPanel Background="#ffff">
+                                    <Image Source="/apache.png" Width="120" Margin="10"/>
+                                    <Button x:Name="Btn_port_apache" Style="{StaticResource btn_prin}" Content="Start" Margin="0,10,0,0" Click="Buton_port_apache_Click" />
+                                    <Button x:Name="Btn_reset_apache"  Style="{StaticResource btn_reset}" GotFocus="" Content="Reset" Width="100" Margin="0,10,0,0" Click="Btn_reset_apache_Click"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+        
+    </Border>
+   
+</Window>

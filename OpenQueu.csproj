@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="apache.png" />
+    <None Remove="icon_filezilla.png" />
+    <None Remove="ico_MySQL.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="submitCommad">
+      <HintPath>..\..\submitCommad\submitCommad\bin\Debug\net6.0-windows\submitCommad.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="apache.png" />
+    <Resource Include="icon_filezilla.png" />
+    <Resource Include="ico_MySQL.png" />
+  </ItemGroup>
+
+</Project>
