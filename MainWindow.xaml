@@ -100,7 +100,7 @@
                                 </Border.BorderBrush>
                                 <StackPanel Background="#ffff">
                                     <Image Source="/icon_filezilla.png" Width="150"/>
-                                    <Button x:Name="Btn_filezilla" Style="{StaticResource btn_prin}" Content="Start" Margin="0,10,0,0" Click="Btn_filezilla_Click"/>
+                                    <Button x:Name="Btn_port_filezilla" Style="{StaticResource btn_prin}" Content="Start" Margin="0,10,0,0" Click="Btn_filezilla_Click"/>
                                     <Button x:Name="Btn_reset_filezilla"  Style="{StaticResource btn_reset}" Content="Reset" Width="100" Margin="0,10,0,0" Click="Btn_reset_filezilla_Click" />
                                 </StackPanel>
                             </Border>
@@ -117,7 +117,7 @@
                                 <StackPanel Background="#ffff">
                                     <Image Source="/apache.png" Width="120" Margin="10"/>
                                     <Button x:Name="Btn_port_apache" Style="{StaticResource btn_prin}" Content="Start" Margin="0,10,0,0" Click="Buton_port_apache_Click" />
-                                    <Button x:Name="Btn_reset_apache"  Style="{StaticResource btn_reset}" GotFocus="" Content="Reset" Width="100" Margin="0,10,0,0" Click="Btn_reset_apache_Click"/>
+                                    <Button x:Name="Btn_reset_apache"  Style="{StaticResource btn_reset}" Content="Reset" Width="100" Margin="0,10,0,0" Click="Btn_reset_apache_Click"/>
                                 </StackPanel>
                             </Border>
                         </Grid>

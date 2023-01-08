@@ -23,6 +23,7 @@ namespace OpenQueu
         State_ports state_Ports = new State_ports();
         OpenPort OpenPort = new OpenPort(); 
         Act_MyIni Act_MyIni = new Act_MyIni();
+        Button_state button_State;
         public MainWindow()
         {
             InitializeComponent();
@@ -49,7 +50,8 @@ namespace OpenQueu
 
         private void Buton_port_MySQL_Click(object sender, RoutedEventArgs e)
         {
-             state_Ports._MyMySQL_port  = OpenPort.openPort(@"mysql\bin\mysqld --defaults-file=mysql\bin\my.ini --standalone", "taskkill /IM \"mysqld.exe\" /F", state_Ports.MySQL_port);           
+            state_Ports._MyMySQL_port  = OpenPort.openPort(@"mysql\bin\mysqld --defaults-file=mysql\bin\my.ini --standalone", "taskkill /IM \"mysqld.exe\" /F", state_Ports.MySQL_port);
+             button_State = new Button_state(Buton_port_MySQL,state_Ports.MySQL_port);
         }
 
         private void Btn_reset_MySQL_Click(object sender, RoutedEventArgs e)
@@ -60,6 +62,8 @@ namespace OpenQueu
         private void Buton_port_apache_Click(object sender, RoutedEventArgs e)
         {
             state_Ports._Apache_port = OpenPort.openPort(@"apache\bin\httpd.exe", "taskkill /IM \"httpd.exe\" /F", state_Ports.Apache_port);
+            button_State = new Button_state(Btn_port_apache,state_Ports.Apache_port);
+
         }
         private void Btn_reset_apache_Click(object sender, RoutedEventArgs e)
         {
@@ -69,6 +73,7 @@ namespace OpenQueu
         private void Btn_filezilla_Click(object sender, RoutedEventArgs e)
         {
             state_Ports._filezilla_port = OpenPort.openPort(@"FileZillaFTP\FileZillaServer.exe" , "\"FileZillaFTP\\FileZillaServer.exe\" /stop", state_Ports.Filezilla_port);
+            button_State = new Button_state(Btn_port_filezilla,state_Ports.Filezilla_port);
         }
 
         private void Btn_reset_filezilla_Click(object sender, RoutedEventArgs e)
